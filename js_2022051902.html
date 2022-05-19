@@ -16,6 +16,10 @@
         .blueClass {
             color: blue;
         }
+
+        .queryClass {
+            color:yellow;
+        }
     </style>
 
 </head>
@@ -32,11 +36,36 @@
         Hello myClass2
     </div>
 
+    <div id="query">
+        query id test
+    </div>
+
+    <div class="queryClass">
+        query id test
+    </div>
+
+    <div class="queryClass">
+        query id test
+    </div>
+
 
     <script>
         const myClass = document.getElementsByClassName('myClass');
         console.log(myClass[0].innerText);
         myClass[1].style.color = "blue";
+
+        const query = document.querySelector("#query");
+        query.style.color = "green";
+
+        const queryAllClass = document.querySelectorAll('.queryClass');
+
+        
+        // getElementById 抓單個id
+        // getElementsByClassName 全部的class
+        // querySelector 抓單個id 要#id
+        // querySelectorAll 抓class 要.class
+
+
         
         
 
