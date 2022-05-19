@@ -13,6 +13,9 @@
         .myClass{
             color: red;
         }
+        .blueClass {
+            color: blue;
+        }
     </style>
 
 </head>
@@ -32,6 +35,8 @@
 
     <script>
         const myClass = document.getElementsByClassName('myClass');
+        console.log(myClass[0].innerText);
+        myClass[1].style.color = "blue";
         
         
 
