@@ -48,13 +48,13 @@
 
     <input type="text" name="num2" id="num2" placeholder="num2 ?" required>
     
-    <!-- <div class="queryClass">
+    <div class="queryClass">
         query id test
     </div>
 
     <div class="queryClass">
         query id test
-    </div> -->
+    </div>
     <br><br>
     <!-- <button id="myBtn"> button</button> -->
 
@@ -86,20 +86,36 @@
         const num1Input = document.getElementById('num1');
         const num2Input = document.getElementById('num2');
 
-        const queryAllClass = document.querySelectorAll('.queryClass');
+        // const queryAllClass = document.querySelectorAll('.queryClass');
+        const queryAllClass = document.getElementsByClassName('queryClass');
         
         // 元件.觸發事件('click點擊事件',動作要做啥.)
         myBtn.addEventListener('click',function(){
                 // alert('myBtn ok')    ;
-            // for (const key in queryAllClass) {
-            //     queryAllClass[key].style.color = "red";
-            // }
 
-            let num1 = parseInt(num1Input.value);
-            let num2 = parseInt(num2Input.value);
-            console.log(num1 + num2);
-            sum = num1 + num2;
-            result.innerText = `結果為 ${sum}`;
+            // for in 的部分 會把全部的部分
+            // key 產生資料 不只 0 1 還有其他的元素            
+            // css query all
+
+            // css queryAllClass Array.isArray(queryAllClass) =>false
+           
+            for (const key in queryAllClass) {
+                // queryAllClass[0].style.color = "red";
+                // queryAllClass[key].style.color = "red";
+                console.log(key);
+                // 非數字的key擋掉
+                if(!isNaN(key)){
+                    // console.log(key);
+                    queryAllClass[key].style.color = "red";
+                }
+                // queryAllClass123[key].style.color = "red";
+            }
+            // let num1 = parseInt(num1Input.value);
+            // let num2 = parseInt(num2Input.value);
+            // console.log(num1 + num2);
+            // sum = num1 + num2;
+            // result.innerText = `結果為 ${sum}`;
+            result.innerText = `切換成功`;
         });
 
 
