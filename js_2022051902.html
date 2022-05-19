@@ -28,7 +28,7 @@
 
     </div>
 
-    <div class="myClass">
+    <!-- <div class="myClass">
         Hello myClass1
     </div>
 
@@ -38,7 +38,7 @@
 
     <div id="query">
         query id test
-    </div>
+    </div> -->
 
     <div class="queryClass">
         query id test
@@ -47,17 +47,36 @@
     <div class="queryClass">
         query id test
     </div>
+    <br><br>
+    <button id="myBtn"> button</button>
 
 
     <script>
-        const myClass = document.getElementsByClassName('myClass');
-        console.log(myClass[0].innerText);
-        myClass[1].style.color = "blue";
+        // 練習三 button touch queryClass red
+        const myBtn = document.getElementById('myBtn');
+        myBtn.addEventListener('click',function(){
+                alert('myBtn ok')    ;
+        });
 
-        const query = document.querySelector("#query");
-        query.style.color = "green";
+
+        // const myClass = document.getElementsByClassName('myClass');
+        // console.log(myClass[0].innerText);
+        // myClass[1].style.color = "blue";
+
+        // const query = document.querySelector("#query");
+        // query.style.color = "green";
 
         const queryAllClass = document.querySelectorAll('.queryClass');
+        // 全部class更換
+        // 1.for
+            // for (let i = 0; i < queryAllClass.length; i++) {
+            //     queryAllClass[i].style.color = "blue";
+            // }
+
+        // 2.for in
+           for (const key in queryAllClass) {
+                queryAllClass[key].style.color = "blue";
+           }
 
         
         // getElementById 抓單個id
