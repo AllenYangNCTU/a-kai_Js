@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -130,9 +135,13 @@
             //其他黑色
 
             if (i % 2 == 1) {
-                document.write(myStr + "我要變紅色" + "<br><br>");
+                document.write("<p class='red'>");
+                document.write(myStr + "我要變紅色");
+                document.write("</p>")
             } else {
-                document.write(myStr + "<br><br>");
+                document.write("<p>")
+                document.write(myStr);
+                document.write("</p>")
             }
         };
 
