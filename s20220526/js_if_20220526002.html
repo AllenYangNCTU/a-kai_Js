@@ -229,20 +229,17 @@
         console.log('idStr', idStr);
         console.log('conditionNum', conditionNum);
 
-        if (idResult.length == 0) {
-            isResult = "都沒有";
-        }
-
+       
         //idResult & isMember ?
         // A && member => 1折
         // B && member => 5折
         // C && member => 7折
         // 其他 => 95折
-        if (isResult == "A" && isMember) {
+        if (idResult == "A" && isMember) {
             console.log('恭喜 得到 1 折');
-        } else if (isResult == "B" && isMember) {
+        } else if (idResult == "B" && isMember) {
             console.log('恭喜 得到 5 折');
-        } else if (isResult == "C" && isMember) {
+        } else if (idResult == "C" && isMember) {
             console.log('恭喜 得到 7 折');
         } else {
             console.log('快加入會員喔 本日 95 折');
