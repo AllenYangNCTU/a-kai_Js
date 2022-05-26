@@ -141,93 +141,112 @@
         // 有 345 / 678 / 90?
         // 2.看有沒有會員
 
-        let id = "F678";
-        let member = true;
+        let id = "FDSFDSFDFDFDSFDSFD";
+        let isMember = true;
         let idStr = "";
         let idResult = "";
         let conditionNum = "";
         // let idStr = id.search("F");
-        
+
         // 3 4 5
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "3";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "A";
             }
         }
 
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "4";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "A";
-            }        
-        }
-        
-        if(idResult.length==0){
-            conditionNum = "5";
-            idStr = id.search(conditionNum);
-            if(idStr > 0){
-                    idResult = "A";
-            }        
+            }
         }
 
-        
+        if (idResult.length == 0) {
+            conditionNum = "5";
+            idStr = id.search(conditionNum);
+            if (idStr > 0) {
+                idResult = "A";
+            }
+        }
+
+
         //search position 位置
         // 存在
         // 0 1 2 3
         // 不存在
         // -1
-        
+
         // 6 7 8
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "4";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "B";
             }
         }
 
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "5";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "B";
-            }        
+            }
         }
-        
-        if(idResult.length==0){
+
+        if (idResult.length == 0) {
             conditionNum = "6";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
-                    idResult = "B";
-            }        
+            if (idStr > 0) {
+                idResult = "B";
+            }
         }
 
         // 9 0
-        if(idResult.length==0){
+        if (idResult.length == 0) {
             conditionNum = "9";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "C";
-            }        
+            }
         }
-        
-        if(idResult.length==0){
+
+        if (idResult.length == 0) {
             conditionNum = "0";
             idStr = id.search(conditionNum);
-            if(idStr > 0){
+            if (idStr > 0) {
                 idResult = "C";
-            }        
+            }
         }
 
         //結果
-        console.log('id',id);
-        console.log('member',member);
-        console.log('idResult',idResult);
-        console.log('idStr',idStr);
-        console.log('conditionNum',conditionNum);
+        console.log('id', id);
+        console.log('isMember', isMember);
+        console.log('idResult', idResult);
+        console.log('idStr', idStr);
+        console.log('conditionNum', conditionNum);
+
+        if (idResult.length == 0) {
+            isResult = "都沒有";
+        }
+
+        //idResult & isMember ?
+        // A && member => 1折
+        // B && member => 5折
+        // C && member => 7折
+        // 其他 => 95折
+        if (isResult == "A" && isMember) {
+            console.log('恭喜 得到 1 折');
+        } else if (isResult == "B" && isMember) {
+            console.log('恭喜 得到 5 折');
+        } else if (isResult == "C" && isMember) {
+            console.log('恭喜 得到 7 折');
+        } else {
+            console.log('快加入會員喔 本日 95 折');
+        }
 
     </script>
 </body>
