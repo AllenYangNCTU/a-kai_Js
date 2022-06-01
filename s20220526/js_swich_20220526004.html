@@ -70,26 +70,26 @@
         // 練習二變形題目
         // 基數日去買
         // 偶數日去買 break;
-        let loveNum = 1;
-        switch (loveNum) {
-            // 基數
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-                console.log("基數星期都可以去")
-                break;
+        // let loveNum = 1;
+        // switch (loveNum) {
+        //     // 基數
+        //     case 1:
+        //     case 3:
+        //     case 5:
+        //     case 7:
+        //         console.log("基數星期都可以去")
+        //         break;
 
-            // 偶數
-            case 2:
-            case 4:
-            case 6:
-                console.log("偶數星期都可以去")
-                break;
+        //     // 偶數
+        //     case 2:
+        //     case 4:
+        //     case 6:
+        //         console.log("偶數星期都可以去")
+        //         break;
 
-            default:
-                break;
-        }
+        //     default:
+        //         break;
+        // }
 
 
         // 作業20220526 switch case
@@ -98,6 +98,33 @@
         // 早上圖書館讀書 1 4 7
         // 下午圖書館讀書 2 5 8
         // 晚上圖書館讀書 3 6 9
+
+        // let loveNum = 1;
+        // let loveNum = 2;
+        let loveNum = 3;
+        console.log('loveNum => ' + loveNum );
+        switch (loveNum % 3) {
+            // 早上
+            case 1:
+                //餘數1
+                console.log("1 4 7 圖書館A時段");
+                break;
+
+            // 下午
+            case 2:
+                //餘數1
+                console.log("2 5 8 圖書館B時段");
+                break;
+
+            // 晚上
+            case 0:
+                //餘數1
+                console.log("3 6 9 圖書館C時段");
+                break;
+
+            default:
+                break;
+        }
 
 
     </script>
