@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 巢狀回圈
+        // 兩層回圈
+
+        // 畫星星 練習二
+        // 輸入一個數 會顯示如下圖 
+        // input = 5 時
+        // 1*****
+        // 2****
+        // 3***
+        // 4** 
+        // 5* 
+
+        // 1.第一層input 5 => 5層
+        // 步驟一
+        // *
+        // **
+        // ***
+        // input = 5;
+        // for (let i = 0; i < input; i++) {
+        //     // 1.蓋大樓
+        //     document.write(i);
+        //     // 2.雙層回圈
+        //     for (let j = 0; i >= j; j++) {
+        //         document.write(j);
+        //         // document.write('*');
+        //     }
+
+        //     // 2. end
+        //     document.write("<br>");
+        // }
+
+        //  步驟二
+        input = 5;
+        tmp = input;
+        for (let i = 0; i < input; i++) {
+            // console.log('old tmp => ' + tmp);
+            tmp--; //tmp = tmp - 1;
+            // console.log('new tmp => ' + tmp);
+            // 1.蓋大樓
+            // document.write(i);
+            // 2.雙層回圈
+            for (let j = 0; j <= tmp ; j++) {
+                // document.write(j);
+                document.write('*');
+            }
+            // 2. end
+            document.write("<br>");
+        }
+
+    </script>
+</body>
+
+</html>
