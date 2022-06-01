@@ -44,22 +44,55 @@
         // }
 
         //  步驟二
-        input = 5;
-        tmp = input;
-        for (let i = 0; i < input; i++) {
-            // console.log('old tmp => ' + tmp);
-            tmp--; //tmp = tmp - 1;
-            // console.log('new tmp => ' + tmp);
+        // input = 5;
+        // tmp = input;
+        // for (let i = 0; i < input; i++) {
+        //     // console.log('old tmp => ' + tmp);
+        //     tmp--; //tmp = tmp - 1;
+        //     // console.log('new tmp => ' + tmp);
+        //     // 1.蓋大樓
+        //     // document.write(i);
+        //     // 2.雙層回圈
+        //     for (let j = 0; j <= input ; j++) {
+        //         // document.write(j);
+        //         document.write('*');
+        //     }
+        //     // 2. end
+        //     document.write("<br>");
+        // }
+
+        //for loop 星星練習3
+        // input = 5
+        // *****
+        // *****
+        // *****
+        // *****
+        // *****
+
+        // 方法一
+        // let input = 5;
+        // for(let i = 0 ; i < input ; i++){
+        //     // console.log(i + "*****");
+        //     document.write(i)
+        // }
+
+
+        // 方法二 * 30
+        let input = 5;
+        let inputJ = 30;
+        for(let i = 0 ; i < input ; i++){
             // 1.蓋大樓
             // document.write(i);
-            // 2.雙層回圈
-            for (let j = 0; j <= tmp ; j++) {
+            // 2.畫input數量的星星
+            for(let j = 0 ; j < inputJ ; j++){
                 // document.write(j);
                 document.write('*');
             }
-            // 2. end
-            document.write("<br>");
+            document.write('<br>');
+
         }
+
+        
 
     </script>
 </body>
