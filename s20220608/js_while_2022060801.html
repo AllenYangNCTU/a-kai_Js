@@ -22,8 +22,9 @@
         // studnet1 數學
 
         // 練習二
-        // 計算全班平均分數
+        // 計算全班平均分數 (google js 小數點第二位)
         // 全部總分 / 學生數量
+
 
         // 最後畫面顯示
         // 計算總分 與 平均分數
@@ -77,7 +78,7 @@
             // let newChinese = parseInt(chinese);
 
             let sum = chinese + english + math;
-            let avg = sum / 3;
+            let avg = (sum / 3).toFixed(2);
 
             allSum += sum; //每次的總分加總
             // allSum = allSum + sum;
@@ -107,7 +108,11 @@
 
         // while 的外部 取得 最後的allSum
         document.write('<hr>');
-        document.write(`全部總分為 => ${allSum}`);
+        document.write(`全部總分為 => ${allSum}<br>`);
+        document.write(`班級人數為 => ${input}<br>`);
+        let allAvg = allSum / input;
+        newAvg = allAvg.toFixed(2);
+        document.write(`全部平均為 => ${newAvg}<br>`);
 
 
     </script>
