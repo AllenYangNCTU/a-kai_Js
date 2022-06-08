@@ -18,6 +18,23 @@
     6<br> -->
 
     <script>
+        // math random 0 - 1 小數點
+        // 正整數 random * 11 最大值10
+        // 0.99 * 11 => 無條件捨去整數 10
+        //  Math.floor(Math.random() * (max - min + 1) ) + min
+        // // max 6 - min 1 +1 
+        // Math.floor(Math.random()*2); //回傳0或1
+        // 0.4 * 2 = 0.8 => 無條件捨去 0
+        // 0.7 * 2 = 1.4 => 無條件捨去 1
+        // 0.99 * 2 =
+
+        // Math.floor(Math.random()*3); //回傳0或1或2
+        // Math.floor(Math.random()*5); //回傳0或1或2或3或4
+        // Math.floor(Math.random()*50); //回傳0或1或2或3...或49
+        
+        let result = Math.floor(Math.random());
+        console.log(result);
+
         //array push
         // let myArr = [1,2,3];
         // // 今天[1,2,3,4]
@@ -67,7 +84,7 @@
         // document.write(num)
 
         // 2.我要跑六次
-        let i = 1;
+        let i = 1; //顯示第幾次開獎
         let lottery = [];
 
         // while (lottery.length < 6) {
@@ -84,8 +101,8 @@
                 // push
                 lottery.push(num);
 
-                // array 長度
-                // lottery.length
+                // array 長度 
+                // lottery.length 真正開真正開出的號碼
                 document.write(`第${i}次開獎---第${lottery.length}個號碼 => ${num}<br>`);
             }
 
