@@ -31,17 +31,25 @@
 
         // 練習一 成績加總
         // 輸入學生數量 input
-        let input = 1;
+        // let input = 1;
+        let input = prompt('請輸入學生數量');
+        // console.log('input',input);
 
         // studnet1 國文
         // studnet1 英文
         // studnet1 數學
 
-        let chinese = 60;
-        let english = 60;
-        let math = 60;
+        let chinese = prompt('請輸入國文分數');
+        let english = prompt('請輸入英文分數');
+        let math = prompt('請輸入數學分數');
         let sum = chinese + english + math;
         let avg = sum / 3;
+
+        console.log('chinese',chinese);
+        console.log('english',english);
+        console.log('math',math);
+        console.log('sum',sum);
+        console.log('avg',avg);
         
         // 最後畫面顯示
         // 計算總分 與 平均分數
