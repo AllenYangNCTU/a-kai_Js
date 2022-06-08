@@ -25,6 +25,8 @@
         // 計算全班平均分數 (google js 小數點第二位)
         // 全部總分 / 學生數量
 
+        // 練習三
+        // 老師的手會斷掉 input > 3 中斷while
 
         // 最後畫面顯示
         // 計算總分 與 平均分數
@@ -55,6 +57,11 @@
 
         let i = 1;
         while (i <= input) {
+            if (input > 3) {
+                document.write('老師的手會斷掉');
+                break;
+            }
+
             console.log(`第${i}個人`);
             // code start
             // studnet1 國文
@@ -105,14 +112,15 @@
             i++;
         }
 
-
-        // while 的外部 取得 最後的allSum
-        document.write('<hr>');
-        document.write(`全部總分為 => ${allSum}<br>`);
-        document.write(`班級人數為 => ${input}<br>`);
-        let allAvg = allSum / input;
-        newAvg = allAvg.toFixed(2);
-        document.write(`全部平均為 => ${newAvg}<br>`);
+        if (input < 3) {
+            // while 的外部 取得 最後的allSum
+            document.write('<hr>');
+            document.write(`全部總分為 => ${allSum}<br>`);
+            document.write(`班級人數為 => ${input}<br>`);
+            let allAvg = allSum / input;
+            newAvg = allAvg.toFixed(2);
+            document.write(`全部平均為 => ${newAvg}<br>`);
+        }
 
 
     </script>
