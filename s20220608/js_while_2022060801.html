@@ -34,6 +34,10 @@
         // 學生2 國文=>70 英文=>80 數學=>90
         // 學生2 總分=>240 平均=> 80
 
+        // 全班總分 => allSum
+        // 全班人數 => input
+        // 全班平均分數 => allAvg
+
 
         // 練習一 成績加總
         // 輸入學生數量 input
@@ -45,6 +49,8 @@
         //     const element = array[index];
 
         // }
+
+        let allSum = 0; //宣告外部的總分 第一個粉紅色星星
 
         let i = 1;
         while (i <= input) {
@@ -73,6 +79,9 @@
             let sum = chinese + english + math;
             let avg = sum / 3;
 
+            allSum += sum; //每次的總分加總
+            // allSum = allSum + sum;
+
             console.log('chinese', chinese);
             console.log('english', english);
             console.log('math', math);
@@ -96,6 +105,9 @@
         }
 
 
+        // while 的外部 取得 最後的allSum
+        document.write('<hr>');
+        document.write(`全部總分為 => ${allSum}`);
 
 
     </script>
