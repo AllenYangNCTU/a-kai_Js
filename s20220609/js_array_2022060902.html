@@ -14,7 +14,7 @@
 
 <script>
     // js index array
-    let myArr = [1,3,5,7,9];
+    let myArr = [1, 3, 5, 7, 9];
     // 單一呼叫 array[key]
     console.log(myArr[0]); // 1
     console.log(myArr[1]); // 3
@@ -22,13 +22,13 @@
     console.log(myArr[3]); // 7
 
     // foreach
-    myArr.forEach(function(value,key){
+    myArr.forEach(function (value, key) {
         console.log('hello foreach');
         console.log(key);
         console.log(value);
     });
-    
-    function hello (value ,key){
+
+    function hello(value, key) {
 
     };
     // 練習一
@@ -43,12 +43,30 @@
 
     // array.push
 
-    let studentArr = ['js','php','html','css'];
+    let studentArr = ['js', 'php', 'html', 'css'];
     console.log(studentArr[0]);
     console.log(studentArr[1]);
     console.log(studentArr[2]);
     console.log(studentArr[3]);
-    
+
+    let newStudentArr = [];
+
+    studentArr.forEach(function (value, key) {
+        console.log('studentArr foreach');
+        console.log(key);
+        console.log(value);
+        // key pass
+        // if(key != 3){
+        //     newStudentArr.push(value);
+        // }
+
+        // value pass
+        if (value != "html") {
+            newStudentArr.push(value);
+        }
+    });
+
+    console.log('newStudentArr', newStudentArr);
 
 </script>
 
