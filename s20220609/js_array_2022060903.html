@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    array
+</body>
+
+<script>
+    //[1,3,5,7,9] => [2,6,10,14,18] ?
+    let arr1 = [1, 3, 5, 7, 9];
+    let newArr1 = [];
+    // foreach
+    arr1.forEach(function (value, key) {
+        newArr1.push(value * 2)
+    });
+
+    console.log('arr1', arr1);
+    console.log('newArr1', newArr1);
+
+    // map filter reduce 
+
+    // map 
+    let arr2 = [1, 3, 5, 7, 9];
+    let mapArr = arr2.map(function (value) {
+        return value * 10;
+    });
+
+    // 練習一
+    // 長榮40個月
+    // [1,2,3,4,5]
+    // [1-3] 20個月
+    // [4-5] 40個月
+
+    console.log('arr2',arr2);
+    console.log('mapArr',mapArr);
+
+
+
+</script>
+
+</html>
