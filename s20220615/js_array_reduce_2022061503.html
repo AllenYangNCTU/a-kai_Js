@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // reduce 我要算這個array 100 - 全部array
+        let num = [0, 1, 2, 3, 5, 7].reduce(function (total, value) {
+            console.log('reduce');
+            console.log(total);
+            console.log(value); D
+            return total - value;
+        }, 100);
+        // 100 total 初始直
+        // reduce - 
+        // total 減少 跟 增加
+
+        console.log(num); // 18
+    </script>
+</body>
+
+</html>
