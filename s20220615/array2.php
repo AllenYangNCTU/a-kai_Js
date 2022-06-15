@@ -17,7 +17,7 @@
     foreach ($myArr as $key => $value) {
         print_r($key);
         print_r($value);
-    }
+    };
 
     // php 多維陣列
     $students = [
@@ -32,3 +32,10 @@
             'tel' => '0922-222-222'
         ],
     ];
+
+    // function
+    function myFunction()
+    {
+        print_r('hello myfunction');
+    }
+    myFunction();
