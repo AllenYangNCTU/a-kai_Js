@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    object
+    object<br><br>
     <script>
 
         let x = 0;
@@ -21,17 +21,17 @@
         console.log(a);
         console.log(b);
 
-        // Object.keys
+        // // Object.keys
         const obj = {
             a: 'amy',
             b: 'bob',
             c: 'cat',
         }
-        console.log(Object.keys(obj)); // get object key => ['a','b','c']
-        console.log(Object.values(obj)); // get object value => ['amy','bob','cat']
-        console.log(Object.entries(obj));
+        // console.log(Object.keys(obj)); // get object key => ['a','b','c']
+        // console.log(Object.values(obj)); // get object value => ['amy','bob','cat']
+        // console.log(Object.entries(obj));
         let entriesArr = Object.entries(obj);
-        // get object value => [['a','amy']['b','bob']['c','cat']]
+        // // get object value => [['a','amy']['b','bob']['c','cat']]
 
         // map
         // array map
@@ -40,7 +40,11 @@
             console.log(value);
             let [k, v] = value; //['a','amy']
             // return k; // mapArr = ['a','b','c']
-            return v; // mapArr = ['amy','bob','cat']
+            const resultString = `${k}=>${v}`;
+            console.log(resultString);
+            document.write(resultString+"<br>");
+            // return v; // mapArr = ['amy','bob','cat']
+            return resultString; // mapArr = ['amy','bob','cat']
 
         });
         console.log('mapArr', mapArr);
@@ -49,13 +53,13 @@
         // 我要顯示map array ['a=>amy','b=>bob','c=>cat']
 
         // foreach
-        entriesArr.forEach(value => {
-            console.log('hello foreach');
-            console.log(value); // [key,value]
-            console.log(value[0]); //0 key
-            console.log(value[1]); //1 value
+        // entriesArr.forEach(value => {
+        //     console.log('hello foreach');
+        //     console.log(value); // [key,value]
+        //     console.log(value[0]); //0 key
+        //     console.log(value[1]); //1 value
 
-        });
+        // });
 
       
 
