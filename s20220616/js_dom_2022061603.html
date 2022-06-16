@@ -10,11 +10,26 @@
 
 <body>
     dom
-    <p>
+    <p data-test="100">
+        ppppppp
+    </p>
+    <p data-test="200">
+        ppppppp
+    </p>
+    <p data-test="300">
+        ppppppp
+    </p>
+    <p data-test="400">
+        ppppppp
+    </p>
+    <p data-test="500">
+        ppppppp
+    </p>
+    <p data-test="600">
         ppppppp
     </p>
 
-    <p id="idP">
+    <p id="idP" data-test="700">
         p2p2p2p2
     </p>
 
@@ -27,7 +42,7 @@
     </div>
 
     <div>
-        <p>
+        <p data-test="800">
             div + p
         </p>
     </div>
@@ -76,15 +91,19 @@
         allP[2].style.color = 'blue';
 
         // 練習三 foreach 換querySelectorAll
+        // 練習四 偶數p green
         // green
         allP.forEach(function (value, index) {
             console.log('foreach');
-            console.log(value);
+            console.log(value.dataset.test);
             console.log(index);
 
-            value.style.color = 'green';
-
+            if (index % 2 == 0) {
+                value.style.color = 'green';
+            }
+            value.textContent = `hello p[${index}]`;
         });
+
 
 
 
