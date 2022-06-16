@@ -6,6 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .green {
+            color: green;
+        }
+        .red {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,6 +26,12 @@
     </p>
     <p>
         <button type="button" id="btn3">btn3</button>
+    </p>
+    <p>
+        <button type="button" id="btn4">btn4</button>
+    </p>
+    <p id="result">
+        Lorem ipsum dolor sit amet.
     </p>
 
     <script>
@@ -36,11 +50,48 @@
 
         // 方法三 addEventListener
         const btn3 = document.getElementById('btn3');
-        console.log('btn3',btn3);
-        btn3.addEventListener('click',function(event){
+        console.log('btn3', btn3);
+        // btn3.addEventListener('click',function(event){
+        //     console.log('btnFun3 ok');
+        //     console.log(event);
+        // });
+        btn3.addEventListener('click', event => {
             console.log('btnFun3 ok');
             console.log(event);
         });
+
+        // 方法四 addEventListener
+        const btn4 = document.getElementById('btn4');
+        console.log('btn4', btn4);
+        btn4.addEventListener('click', btn4Fun); //綁定click事件
+        btn4.addEventListener('mouseover', mouseoverFun); //綁定mouseover事件
+        btn4.addEventListener('mouseout', mouseoutFun); //綁定mouseout事件
+
+        // click change color
+        const result = document.getElementById('result')
+        function btn4Fun() {
+            console.log('btnFun4 ok');
+            // result.classList.toggle("green"); //classList
+            console.log(result.getAttribute('class'));
+            if (result.getAttribute('class') == 'green') {
+                result.setAttribute('class', 'red');
+            } else {
+                result.setAttribute('class', 'green');
+            }
+        }
+
+        function mouseoverFun() {
+            console.log('mouseover');
+            console.log('滑鼠進入');
+        }
+
+        function mouseoutFun() {
+            console.log('mouseout');
+            console.log('滑鼠出去');
+        }
+
+
+
 
     </script>
 </body>
