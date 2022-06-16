@@ -95,6 +95,7 @@
         // green
         allP.forEach(function (value, index) {
             console.log('foreach');
+            // HTML Global data-* Attributes - W3Schools
             console.log(value.dataset.test);
             console.log(index);
 
@@ -104,6 +105,17 @@
             value.textContent = `hello p[${index}]`;
         });
 
+        // 練習五 reduce data-test 全部的value
+        // [...allP] => nodeList  array
+
+        let allPArr = [...allP];
+        let sumAllP =allPArr.reduce(function (total, value) {
+            console.log(total);
+            const testNum = Number(value.dataset.test);
+            return total + testNum;
+        }, 0);
+
+        console.log('sumAllP',sumAllP);
 
 
 

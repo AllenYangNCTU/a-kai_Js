@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    event
+    <p>
+        <button type="button" onclick="btnFun1()">btn1</button>
+    </p>
+    <p>
+        <button type="button" id="btn2">btn2</button>
+    </p>
+
+    <script>
+        // event 
+        // 方法一
+        function btnFun1() {
+            console.log('btnFun1 ok');
+        }
+
+        // 方法二
+        const btn2 = document.getElementById('btn2');
+        console.log('btn2', btn2);
+        btn2.onclick = function () {
+            console.log('btnFun2 ok');
+        }
+
+        // 方法三
+
+    </script>
+</body>
+
+</html>
