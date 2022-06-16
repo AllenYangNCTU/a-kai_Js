@@ -33,21 +33,23 @@
         //練習二 button 文字
         // text => myBtnOK
         const myBtn = document.querySelector('button');
+        let string = myBtn.textContent; // get dom text
+        console.log('string',string);
         console.log(myBtn);
-        myBtn.textContent = 'myBtnOk';
+        myBtn.textContent = 'myBtnOk'; //set dom text
 
-       //練習三 p 文字
-       // text => pOK
-       const myP = document.querySelector('p');
-       console.log(myP); //變數
-       console.log('myP'); //字串
-       myP.textContent = 'pOK';
+        //練習三 p 文字
+        // text => pOK
+        const myP = document.querySelector('p');
+        console.log(myP); //變數
+        console.log('myP'); //字串
+        myP.textContent = 'pOK';
 
-       //練習四 div 文字
-       // text => divOK
-       const myDiv = document.querySelector('div');
-       console.log(myDiv); //變數
-       myDiv.textContent = 'divOK';
+        //練習四 div 文字
+        // text => divOK
+        const myDiv = document.querySelector('div');
+        console.log(myDiv); //變數
+        myDiv.textContent = 'divOK';
     </script>
 </body>
 
