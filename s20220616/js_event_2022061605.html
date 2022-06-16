@@ -16,6 +16,9 @@
     <p>
         <button type="button" id="btn2">btn2</button>
     </p>
+    <p>
+        <button type="button" id="btn3">btn3</button>
+    </p>
 
     <script>
         // event 
@@ -31,7 +34,13 @@
             console.log('btnFun2 ok');
         }
 
-        // 方法三
+        // 方法三 addEventListener
+        const btn3 = document.getElementById('btn3');
+        console.log('btn3',btn3);
+        btn3.addEventListener('click',function(event){
+            console.log('btnFun3 ok');
+            console.log(event);
+        });
 
     </script>
 </body>
