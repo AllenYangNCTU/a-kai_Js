@@ -9,12 +9,17 @@
 </head>
 
 <body>
-    <div>
+    <div id="div1">
         <p>
             Lorem ipsum dolor sit amet.
         </p>
     </div>
     
+    <div id="div2">
+        <p>
+            Lorem ipsum dolor sit amet.
+        </p>
+    </div>
     <script>
         // 2.1 建立P元素
         // 2.2 建立text
@@ -27,6 +32,17 @@
         // 2.3 建立關聯
         pElement.appendChild(textTextNode);
         console.log('pElement',pElement);
+        
+
+        // 2.4 放到div內
+        const div1 = document.getElementById('div1');
+        div1.append(pElement);
+        console.log(div1);
+
+        // document.write('<p>write p<p>');
+
+        // 練習一 建立好的pElement
+        // 如何塞進去google w3schools js createElement
 
     </script>
 </body>
