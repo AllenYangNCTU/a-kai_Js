@@ -28,7 +28,11 @@
             const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');
             // 2.3 建立關聯
             pElement.appendChild(textTextNode);
-            console.log('pElement', pElement);
+            // console.log('pElement', pElement);
+
+            pElement.setAttribute('onclick','delP(this)');
+            console.log('setAttribute pElement', pElement);
+
             // 2.4 放到div內
             const div1 = document.getElementById('div1');
             div1.append(pElement);
@@ -36,9 +40,10 @@
             console.log(div1);
         }
 
-        // 練習四
-        // 新增<p>  onclick remove()
-        // pElemetn -> setAttribute
+        function delP(element){
+            element.remove();
+        }
+
 
         
 
@@ -50,7 +55,16 @@
         // 1.button
         // 建立一組新的hello 你好嗎
         // 2.建立function click -> function -> 每次都會見新的p 新的text appendChild
+        
 
+        // 練習四
+        // 新增<p>  onclick remove()
+        // pElemetn -> setAttribute
+
+        // 練習五
+        // 新增的第幾個p     
+        // querySelectorAll('p') 
+        // allP.length
     </script>
 </body>
 
