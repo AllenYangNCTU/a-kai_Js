@@ -44,21 +44,14 @@ form.addEventListener("submit", function (e) {
         alert('算你8折');
         let resString = `
             原價 Result : ${getTotalRes} => 8折 : ${getTotalRes*0.8}
-        `
+        `;
         pResult.innerText = resString;
 
     }else{
         alert('好吧算你3折')
         let resString = `
             原價 Result : ${getTotalRes} => 3折 : ${getTotalRes*0.3}
-        `
+        `;
         pResult.innerText = resString;
     }
 });
-
-// // function countFun(element) {
-// //     console.log(element);
-// //     getTotal();
-// // }
-
-
