@@ -14,20 +14,42 @@
             Lorem ipsum dolor sit amet.
         </p>
     </div>
-    <p>
+    <div>
         <button type="button" onclick="addBtnFun()">addBtn</button>
-    </p>
+    </div>
+    
 
     <script>
         // function 
+        // init 
+        // countP = allP;
+        
+        // session 存起來
+        // localStorage local 每個user 自己電腦
+        // 遠端sql
+        // cookie
+
+        const allP = document.querySelectorAll('p');
+        let nowP = allP.length;
+
+
         function addBtnFun() {
+
+            
+            // const allP = document.querySelectorAll('p');
+            // console.log(allP);
+            // console.log(allP.length);
+            
+            // get session countP ?
 
 
             console.log('addBtnFun ok');
             // 2.1 建立P元素
             const pElement = document.createElement('p');
             // 2.2 建立text
-            const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');
+            // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝');
+            const textTextNode = document.createTextNode(`P${nowP+1} hello 您好嗎 衷心感謝`);
+            nowP += 1 ;
             // 2.3 建立關聯
             pElement.appendChild(textTextNode);
             // console.log('pElement', pElement);
