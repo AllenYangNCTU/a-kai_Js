@@ -10,15 +10,45 @@
 
 <body>
     <div id="div1">
-        <p>
-            Lorem ipsum dolor sit amet.
+        <p id="p1" onclick="delP1()">
+            P1 Lorem ipsum dolor sit amet.
+        </p>
+        <p id="p2" onclick="delP2()">
+            P2 Lorem ipsum dolor sit amet.
         </p>
     </div>
     <p>
         <button type="button">addBtn</button>
     </p>
+    <p>
+        <button type="button" onclick="delBtnFun()">delBtn</button>
+        <!-- <button type="button" onclick="alert('hello')">delBtn</button> -->
+    </p>
   
     <script>
+        // delBtnFun
+        function delBtnFun(){
+            // 刪除節點
+            console.log('delBtnFun ok');
+            p2.remove();
+        };
+
+        function delP1(){
+            p1.remove();
+        };
+
+        function delP2(){
+            p2.remove();
+        };
+        
+        const p1 = document.getElementById('p1');
+        const p2 = document.getElementById('p2');
+
+        // 練習一
+        // p tag onclick=""
+        // p1 刪除p1
+        // p2 刪除p2
+
         // 2.1 建立P元素
         // 2.2 建立text
         // 2.3 建立關聯
@@ -55,6 +85,10 @@
         // button
         // 建立一組新的hello 你好嗎
         // click -> function -> 每次都會見新的p 新的text appendChild
+
+        
+
+
 
     </script>
 </body>
