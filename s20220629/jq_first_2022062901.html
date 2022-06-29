@@ -12,8 +12,11 @@
 
 
     <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="addBtn">addBtn</button>
     <hr>
-    <p id="myP">old Lorem ipsum dolor sit amet.</p>
+    <div id="div1">
+        <p id="myP">old Lorem ipsum dolor sit amet.</p>
+    </div>
 
     <!-- 1. jquery -->
     <!-- 2. 開始寫jquery -->
@@ -33,6 +36,25 @@
         // $().ready(function(){
         //     alert('hello jquery');
         // });
+
+        function addBtnFun() {
+            console.log('addBtnFun ok');
+            // 2.1 建立P元素
+            const pElement = document.createElement('p');
+            // 2.2 建立text
+            const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝1');
+            // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝2');
+            // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝3');
+
+            // 2.3 建立關聯
+            pElement.appendChild(textTextNode);
+            console.log('pElement', pElement);
+            // 2.4 放到div內
+            const div1 = document.getElementById('div1');
+            div1.append(pElement);
+            // div1.append(pElement);//無法加入已經加入的節點
+            console.log(div1);
+        }
 
         // 方法三
         $(function () {
@@ -57,6 +79,15 @@
 
             });
 
+            $addCountNum = 0;
+            $('#addBtn').click(function () {
+                $addCountNum += 1;
+                // 練習四 addCountNum
+                console.log('addBtn ok');
+                // js
+                addBtnFun();
+            });
+
             // $('#myBtn').on('click',function(){
             //     console.log('mybtn ok');
             //     $('#myP').text('on click event myP text change text ok');
@@ -71,6 +102,13 @@
             // myP text change text ok => 1
             // myP text change text ok => 2
             // myP text change text ok => 3
+
+            // 練習三
+            // addBtn click
+            // addP ok countAdd => 1
+            // addP ok countAdd => 2
+            // addP ok countAdd => 3
+
 
         });
 
