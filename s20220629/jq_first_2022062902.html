@@ -6,13 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .red{
+            color: red;
+        }
+
+        .blue{
+            color: blue
+        }
+    </style>
 </head>
 
 <body>
 
-
-    <button type="button" id="myBtn">myBtn</button>
-    <button type="button" id="addBtn">addBtn</button>
     <hr>
 
     <ul>
@@ -41,22 +47,35 @@
         $(document).ready(function(){
             // append
             const appendP = $('<li>appendP Lorem ipsum dolor sit amet.</li>');
+            appendP.addClass('red');
             const ul = $('ul').first();
             ul.append(appendP);
 
             //after
             const afterP = $('<p>afterP Lorem ipsum dolor sit amet.</p>');
+            afterP.addClass('blue');
             ul.after(afterP);
 
-            //append
+            //prependP
             const prependP = $('<li>prependP Lorem ipsum dolor sit amet.</li>');
+            prependP.addClass('red');
             ul.prepend(prependP);
 
             //before
             const beforeP = $('<p>beforeP Lorem ipsum dolor sit amet.</p>');
+            beforeP.addClass('blue');
             ul.before(beforeP);
 
             // ctrl + h => 取代
+
+            // addClass 增加class
+            // removeClass 減少class
+
+            // 練習一
+            // before after => blue
+            // append prepend => red
+
+
 
         });
         // jquery end
