@@ -11,6 +11,10 @@
 <body>
 
 
+    <button type="button" id="myBtn">myBtn</button>
+    <hr>
+    <p id="myP">old Lorem ipsum dolor sit amet.</p>
+
     <!-- 1. jquery -->
     <!-- 2. 開始寫jquery -->
 
@@ -19,20 +23,30 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- 2. 開始寫jquery -->
-    <script>        
+    <script>
         // 方法一
         // $(document).ready(function(){
         //     alert('hello jquery');
         // });
-        
+
         // 方法二
         // $().ready(function(){
         //     alert('hello jquery');
         // });
-        
+
         // 方法三
-        $(function(){
-            alert('hello jquery');
+        $(function () {
+
+            // js
+            // const myID = document.getElementById('myBtn');
+            const myPByJs = document.getElementById('myP');
+
+            // jquery
+            $('#myP').text('hello jquery ppp');
+            let myP = $('#myP');
+            console.log('myPByJs', myPByJs);
+            console.log('myP', myP);
+
         });
 
 
