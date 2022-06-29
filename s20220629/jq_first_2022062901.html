@@ -37,12 +37,13 @@
         //     alert('hello jquery');
         // });
 
-        function addBtnFun() {
+        function addBtnFun(num) {
+            console.log('num', num);
             console.log('addBtnFun ok');
             // 2.1 建立P元素
             const pElement = document.createElement('p');
             // 2.2 建立text
-            const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝1');
+            const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝' + num);
             // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝2');
             // const textTextNode = document.createTextNode('hello 您好嗎 衷心感謝3');
 
@@ -70,22 +71,23 @@
             console.log('myP', myP);
 
             //myBtn
-            $countNum = 0;
+            let countNum = 0;
             $('#myBtn').click(function () {
                 console.log('mybtn ok');
-                $countNum += 1;
+                countNum += 1;
                 // $('#myP').text('myP text change text ok');
-                $('#myP').text(`myP text change text ok => ${$countNum}`);
+                $('#myP').text(`myP text change text ok => ${countNum}`);
 
             });
 
-            $addCountNum = 0;
+            let addCountNum = 0;
             $('#addBtn').click(function () {
-                $addCountNum += 1;
+                addCountNum += 1;
                 // 練習四 addCountNum
                 console.log('addBtn ok');
                 // js
-                addBtnFun();
+                addBtnFun(addCountNum);//傳變數
+                // addBtnFun('addCountNum'); //傳字串
             });
 
             // $('#myBtn').on('click',function(){
