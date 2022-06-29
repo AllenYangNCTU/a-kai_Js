@@ -47,6 +47,31 @@
             console.log('myPByJs', myPByJs);
             console.log('myP', myP);
 
+            //myBtn
+            $countNum = 0;
+            $('#myBtn').click(function () {
+                console.log('mybtn ok');
+                $countNum += 1;
+                // $('#myP').text('myP text change text ok');
+                $('#myP').text(`myP text change text ok => ${$countNum}`);
+
+            });
+
+            // $('#myBtn').on('click',function(){
+            //     console.log('mybtn ok');
+            //     $('#myP').text('on click event myP text change text ok');
+            // });
+
+            // 練習一
+            // myBtn click
+            // myP text change text ok
+
+            // 練習二
+            // myBtn click
+            // myP text change text ok => 1
+            // myP text change text ok => 2
+            // myP text change text ok => 3
+
         });
 
 
