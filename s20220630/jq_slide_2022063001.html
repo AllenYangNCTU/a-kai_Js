@@ -16,7 +16,7 @@
         }
 
         .divContent {
-            background-color: lightslategray;
+            background-color: whitesmoke;
             display: none;
         }
 
@@ -84,13 +84,31 @@
             // });
             let divFlag = 0;
 
+            function changeText(){
+                let checkDiv = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('checkDiv',checkDiv);
+                if (!checkDiv) {
+                    $('#myBtn').text('open all');
+                } else {
+                    $('#myBtn').text('close all');
+                }
+            }
+            // changeText();
+
             // 練習一
             $('.divBtn').click(function () {
                 console.log(this);
-                // $('.divContent').slideToggle();
-                $(this).next().slideToggle();
-                $('#myBtn').text('close all');
-
+                let checkDivBefore = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('checkDivBefore',checkDivBefore);
+                // $(this).next().slideDown();
+                // $(this).next().slideToggle();
+                $(this).next().slideToggle(changeText);
+                // setTimeout(changeText,1000);
+                // changeText();
+                // let checkDivAfter = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                // console.log('checkDivAfter',checkDivAfter);
+                // 第二個無法使用
+                
             });
 
             // 練習二
@@ -101,6 +119,7 @@
                 console.log('myBtn click');
                 // 方法一
                 let allContent = $('.divContent').is(":visible"); //抓class 是否可以顯示
+                console.log('allContent',allContent);
                 if (!allContent) {
                     $('.divContent').slideDown();
                     $('#myBtn').text('close all');
