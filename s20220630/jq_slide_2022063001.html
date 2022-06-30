@@ -99,13 +99,23 @@
             // h3 tag data-money 1000-> 800
             const discount = 0.8;
 
-            let oldText = $('.divContent > h3').first().text();
-            console.log('oldText', oldText);
-            // jquery data-set
-            let dataText = $('.divContent').first().data('money'); //int            
-            // let dataText = $('.divContent').first().attr('data-money'); //抓string
-            console.log('dataText', dataText);
-            $('.divContent > h3').first().text('oldText 原價 =>' + dataText + ' 限時特價 => ' + dataText * discount);
+            $('.divContent').each(function(){
+                const h3Tag = $(this).find('h3');
+                // console.log('h3Tag',h3Tag.text());
+                const oldText = h3Tag.text();
+                const dataText = $(this).first().data('money'); //int                            
+                h3Tag.text(`${oldText} 原價 => ${dataText} 限時特價 ${dataText * discount}`);
+            });
+
+            // let oldText = $('.divContent > h3').first().text();
+            // console.log('oldText', oldText);
+            // // jquery data-set
+            // let dataText = $('.divContent').first().data('money'); //int            
+            // // let dataText = $('.divContent').first().attr('data-money'); //抓string
+            // console.log('dataText', dataText);
+            // $('.divContent > h3').first().text(`${oldText} 原價 => ${dataText} 限時特價 ${dataText * discount}`);
+
+            
 
 
             // 練習一
