@@ -55,17 +55,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>品名</th>
+                    <th id="titleID">品名</th>
                     <th>單價</th>
                     <th>數量</th>
                     <th>總價</th>
                 </tr>
                 <tr>
                     <td>
-                        <h3>
+                        <h3 class="h3Class">
                             花茶
                         </h3>
-                        <p>
+                        <p class="pContent">
                             <img src="https://picsum.photos/id/1022/100/100">
                         </p>
                     </td>
@@ -82,9 +82,9 @@
                 <tr>
                     <h3>
                         <td>
-                            <h3>咖啡
+                            <h3 class="h3Class">咖啡
                             </h3>
-                            <p>
+                            <p class="pContent">
                                 <img src="https://picsum.photos/id/1027/100/100">
                             </p>
                         </td>
@@ -100,10 +100,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <h3>
+                        <h3 class="h3Class">
                             黃金水
                         </h3>
-                        <img src="https://picsum.photos/id/1033/100/100">
+                        <p class="pContent">
+                            <img src="https://picsum.photos/id/1033/100/100">
+                        </p>
                     </td>
                     <td>
                         <input type="number" name="itemPrice3" id="itemPrice3" value="500">
@@ -142,8 +144,27 @@
     <!-- jquery code -->
     <script>
         $(document).ready(function () {
-           
+            //    $('.h3Class').each(function(index,element){
+            //         console.log(this);
+            //    });
 
+            $('.h3Class').click(function () {
+                console.log(this);
+                $(this).next().slideToggle();
+            });
+
+            $('#titleID').click(function () {
+                console.log('titleID ok');
+                
+                let pFlag = $('.pContent').is(":visible");
+                console.log('pFlag', pFlag);
+
+                if (pFlag) {
+                    $('.pContent').slideUp(500);
+                } else {
+                    $('.pContent').slideDown(500);
+                }
+            });
         });
 
     </script>
