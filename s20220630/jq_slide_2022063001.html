@@ -36,9 +36,9 @@
 
     <button id="myBtn" type="button">open all</button>
     <div class="divBtn">
-        景點一
+        景點一 取得優惠價
     </div>
-    <div class="divContent">
+    <div class="divContent" data-money="1000">
         <h3>迪士尼樂園</h3>
         <img src="https://picsum.photos/id/1001/400/300">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
@@ -49,7 +49,7 @@
     <div class="divBtn">
         景點二
     </div>
-    <div class="divContent">
+    <div class="divContent" data-money="2000">
         <h3>迪士尼樂園</h3>
         <img src="https://picsum.photos/id/1002/400/300">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
@@ -61,7 +61,7 @@
     <div class="divBtn">
         景點三
     </div>
-    <div class="divContent">
+    <div class="divContent" data-money="3000">
         <h3>迪士尼樂園</h3>
         <img src="https://picsum.photos/id/1003/400/300">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum inventore ipsum quis voluptatibus nulla
@@ -84,9 +84,9 @@
             // });
             let divFlag = 0;
 
-            function changeText(){
+            function changeText() {
                 let checkDiv = $('.divContent').is(":visible"); //抓class 是否可以顯示
-                console.log('checkDiv',checkDiv);
+                console.log('checkDiv', checkDiv);
                 if (!checkDiv) {
                     $('#myBtn').text('open all');
                 } else {
@@ -95,11 +95,24 @@
             }
             // changeText();
 
+            // jquery 剛進來時
+            // h3 tag data-money 1000-> 800
+            const discount = 0.8;
+
+            let oldText = $('.divContent > h3').first().text();
+            console.log('oldText', oldText);
+            // jquery data-set
+            let dataText = $('.divContent').first().data('money'); //int            
+            // let dataText = $('.divContent').first().attr('data-money'); //抓string
+            console.log('dataText', dataText);
+            $('.divContent > h3').first().text('oldText 原價 =>' + dataText + ' 限時特價 => ' + dataText * discount);
+
+
             // 練習一
             $('.divBtn').click(function () {
                 console.log(this);
                 let checkDivBefore = $('.divContent').is(":visible"); //抓class 是否可以顯示
-                console.log('checkDivBefore',checkDivBefore);
+                console.log('checkDivBefore', checkDivBefore);
                 // $(this).next().slideDown();
                 // $(this).next().slideToggle();
                 $(this).next().slideToggle(changeText);
@@ -108,7 +121,7 @@
                 // let checkDivAfter = $('.divContent').is(":visible"); //抓class 是否可以顯示
                 // console.log('checkDivAfter',checkDivAfter);
                 // 第二個無法使用
-                
+
             });
 
             // 練習二
@@ -119,7 +132,7 @@
                 console.log('myBtn click');
                 // 方法一
                 let allContent = $('.divContent').is(":visible"); //抓class 是否可以顯示
-                console.log('allContent',allContent);
+                console.log('allContent', allContent);
                 if (!allContent) {
                     $('.divContent').slideDown();
                     $('#myBtn').text('close all');
@@ -142,7 +155,10 @@
             // 原本open all -> 點過div -> close all        
 
             // 練習四
-            // 
+            // div data-money = 1000
+            // h3換過去 原本 迪士尼樂園 原價1000 => 特價800  
+
+
 
         });
 
