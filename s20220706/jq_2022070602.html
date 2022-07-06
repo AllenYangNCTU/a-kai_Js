@@ -104,6 +104,8 @@
             }
 
             function timerGo() {
+                myBtn.off('click');
+                console.log('click ok');
                 timer = setInterval(function () {
                     if (count <= 30) {
                         title.text('三分球時間');
@@ -123,6 +125,7 @@
                             localStorage.setItem("highScore", nowScore);
                             $('span').text(`${nowScore}`)
                         }
+                        isReset = true;
 
                         clearInterval(timer);
                     }
@@ -164,6 +167,7 @@
             let timer = null;
 
             let isStart = false;
+            let isReset = false;
 
 
 
@@ -172,17 +176,35 @@
             myBtn.click(clickFun);
 
             resetBtn.click(function () {
+                clearInterval(timer);
+                if (isReset) {
+                    isReset = false;
+                    console.log('resetBtn ok');
+                    console.log('isReset', isReset);
+                    return false;
+                } else {
 
-                sum = 0;
-                myP.text(`${sum}`);
+                    console.log('isReset', isReset);
 
-                title.text('分數');
-                title.css('color', 'black');
-                count = 60;
-                myBtn.on("click", clickFun);
-                myBtn.text('進球');
+                    console.log('end');
 
-                timerGo();
+                    sum = 0;
+                    myP.text(`${sum}`);
+
+                    title.text('分數');
+                    title.css('color', 'black');
+                    count = 60;
+                    myBtn.on("click", clickFun);
+                    myP.text('0');
+
+                    myTime.text('60');
+                    myBtn.text('開始');
+
+                    // timerGo();
+
+                }
+
+
             });
 
 
