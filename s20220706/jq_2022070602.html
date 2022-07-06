@@ -29,7 +29,8 @@
         #myTime {
             color: blue;
         }
-        h1{
+
+        h1 {
             margin: 10px auto;
             text-align: center;
         }
@@ -59,8 +60,53 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
+        // 1.html建立
+        // 2.css
+        // 3.分數　click +2 +3
+        // 4.timer 倒數計時
+        // 5.分數 + 倒數計時
+        // 6.重置button
+        // 7.timer = 0 ----> click -> off 進球->時間到
+        // 8.resetBtn -> on click
+        // 9.timer -> timerGoFun 放到click event
+
+
         $(document).ready(function () {
 
+
+            function clickFun() {
+                // sum = count;                
+                if (count < 30) {
+                    sum += 3;
+                } else {
+                    sum += 2;
+                }
+                myP.text(`${sum}`);
+            }
+
+            function timerGo() {
+                timer = setInterval(function () {
+                    if (count <= 30) {
+                        title.text('三分球時間');
+                        title.css('color', 'green');
+                    }
+
+                    if (count > 0) {
+                        count = count - 1;
+                        myTime.text(`${count}`);
+                    }
+                    else {
+                        title.text('最終分數');
+                        title.css('color', 'brown');
+                        clearInterval(timer);
+                    }
+
+                    if (count <= 0) {
+                        myBtn.text('時間到');
+                        myBtn.off("click");
+                    }
+                }, 1000);
+            }
 
             // 起始0分 兩分球
             // 當超過100分 變三分球
@@ -72,16 +118,9 @@
             const resetBtn = $('#resetBtn');
             const title = $('#title');
 
+
             let sum = 0; //初始分數
-            myBtn.click(function () {
-                // sum = count;
-                if (count < 30) {
-                    sum += 3;
-                } else {
-                    sum += 2;
-                }
-                myP.text(`${sum}`);
-            });
+            myBtn.click(clickFun);
 
             resetBtn.click(function () {
                 sum = 0;
@@ -89,27 +128,19 @@
 
                 title.text('分數');
                 title.css('color', 'black');
-                count = 35;
+                count = 60;
+                myBtn.on("click", clickFun);
+                myBtn.text('進球');
+
+                timerGo();
             });
 
             //   var odiv = document.getElementById("ant");
-            let count = 35;
+            let count = 5;
             myTime.text(`${count}`);
             let timer = null;
-            timer = setInterval(function () {
-                if (count <= 30) {
-                    title.text('三分球時間');
-                    title.css('color', 'green');
-                }
 
-                if (count > 0) {
-                    count = count - 1;
-                    myTime.text(`${count}`);
-                }
-                else {
-                    clearInterval(timer);
-                }
-            }, 1000);
+            timerGo();
         });
 
 
