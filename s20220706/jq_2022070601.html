@@ -11,7 +11,12 @@
 
 <body>
     <!-- jQuery Traversing -->
-   
+    <div>
+        <ul>
+            <li>hello li 111</li>
+            <li>hello li 111</li>
+        </ul>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -19,11 +24,20 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
-           
+            const myUl = $('ul').first();
+            const myLi = $('li').first();
+
+            console.log('myUl', myUl);
+            console.log('myLi', myLi);
+
+            const myParentBYmyUl = myUl.parent();
+            const myParentBYmyLi = myLi.parent();
+            console.log('myParentBYmyUl', myParentBYmyUl);
+            console.log('myParentBYmyLi', myParentBYmyLi);
 
         });
 
-     
+
     </script>
 </body>
 
