@@ -75,6 +75,17 @@
 
 
             function clickFun() {
+                console.log('clickFun ok');
+                // let getMyBtnText = myBtn.text();
+                if(isStart == false){
+                    myBtn.text('進球');
+                    isStart = true;
+                    timerGo();
+                    return false;
+                }
+                console.log('clickFun ok2');
+                
+
                 // sum = count;                
                 if (count < 30) {
                     sum += 3;
@@ -118,11 +129,21 @@
             const resetBtn = $('#resetBtn');
             const title = $('#title');
 
+            myBtn.text('開始');
+            let count = 65;
+            myTime.text(`${count}`);
+            let timer = null;
+
+            let isStart = false;
+
+            
+
 
             let sum = 0; //初始分數
             myBtn.click(clickFun);
 
             resetBtn.click(function () {
+
                 sum = 0;
                 myP.text(`${sum}`);
 
@@ -135,12 +156,7 @@
                 timerGo();
             });
 
-            //   var odiv = document.getElementById("ant");
-            let count = 5;
-            myTime.text(`${count}`);
-            let timer = null;
 
-            timerGo();
         });
 
 
