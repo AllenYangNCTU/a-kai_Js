@@ -22,6 +22,10 @@
         }
 
         div {
+            margin-top: 10px;
+        }
+
+        .top {
             margin-top: 50px;
         }
     </style>
@@ -31,7 +35,9 @@
 <body>
     <!-- jQuery Traversing -->
 
-    <div class="div1">
+    <h3>Traversing</h3>
+
+    <div class="div1 top">
         div1
         <div class="div2">
             div2
@@ -73,9 +79,11 @@
 
             //parentsUntil
             // obj = $('li').parentsUntil('.div1');
-            obj = $('li').parentsUntil('.div2');
-            obj.css('color', 'skyblue'); //上面的每一層
-            console.log(obj);
+            // obj = $('li').parentsUntil('.div2');
+            // obj.css('color', 'skyblue'); //上面的每一層
+            // console.log(obj);
+
+            //
 
 
 
