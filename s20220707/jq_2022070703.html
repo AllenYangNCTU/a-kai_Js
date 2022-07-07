@@ -134,26 +134,33 @@
             // first => first red other 沒顏色
             // last => last red other 沒顏色
 
+            function resetFun() {
+                tr.css('color','black');
+            }
+
 
             //btn
             const greenBtn = $('.green');
             const redBtn = $('.red');
             const resetBtn = $('.reset');
-            const table = $('table');
-            console.log('table',table);
+            const tr = $('tr');
+            // console.log('table',table);
 
             // table.children().css('color','blue');
 
             greenBtn.click(function () {
+                resetFun();
                 console.log('greenBtn ok');
                 console.log('children', table.children());
-                table.children().odd().css('color', 'green');
+                tr.odd().css('color', 'green');
             });
             redBtn.click(function () {
+                resetFun();
                 console.log('redBtn ok');
-                table.children().even().css('color', 'red');
+                tr.even().not('tr:first').css('color', 'red');
             });
             resetBtn.click(function () {
+                resetFun();
                 console.log('resetBtn ok');
             });
         });
