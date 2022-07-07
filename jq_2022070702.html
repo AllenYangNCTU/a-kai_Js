@@ -83,7 +83,18 @@
             // obj.css('color', 'skyblue'); //上面的每一層
             // console.log(obj);
 
-            //
+            //往下找
+            // children 往下一層
+            // children 往下一層
+            let obj = $('.div1').children();
+            let obj2 = $('.div1').children().children() ;
+            let obj3 = $('.div1').children().children().children() ;
+            obj.css('color','blue');
+            obj2.css('color','red');
+            obj3.css('color','green');
+            console.log('obj',obj);
+            console.log('obj2',obj2);
+            console.log('obj3',obj3);
 
 
 
