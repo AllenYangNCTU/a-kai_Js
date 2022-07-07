@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        div {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        button {
+            width: 100px;
+            margin-right: 50px;
+            border-radius: 10px;
+        }
+        .green{
+            background-color: lightgreen;
+        }
+        .reset{
+            background-color: skyblue;
+        }
+        .red{
+            background-color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- jQuery Traversing -->
+
+    <h3>Traversing 紅綠燈</h3>
+    <hr>
+    <div>
+        <button class="green" type="green">綠燈</button>
+        <button class="reset" type="reset">重置</button>
+        <button class="red" type="red">紅燈</button>
+    </div>
+    <hr>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>姓名</th>
+            <th>電話</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>amy</td>
+            <td>0911-111-222-333</td>
+        </tr>
+    </table>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 往上找 往外找 parent 往父層找
+            // const myUl = $('ul').first();
+            // const myLi = $('li').first();
+
+            // console.log('myUl', myUl);
+            // console.log('myLi', myLi);
+
+            // const myParentBYmyUl = myUl.parent();
+            // const myParentBYmyLi = myLi.parent();
+            // console.log('myParentBYmyUl', myParentBYmyUl);
+            // console.log('myParentBYmyLi', myParentBYmyLi);
+
+            //parents
+            // $('li').css('color','red'); //我自己這層
+            // $('li').parent().css('color','green'); //上一層
+            // $('li').parent().parent().css('color','blue'); //上上一層
+
+            //parents
+            // $('li').parents().css('color','brown'); //上面的每一層
+
+            //parentsUntil
+            // obj = $('li').parentsUntil('.div1');
+            // obj = $('li').parentsUntil('.div2');
+            // obj.css('color', 'skyblue'); //上面的每一層
+            // console.log(obj);
+
+            //往下找
+            // children 往下一層
+            // children 往下一層
+            // let obj = $('.div1').children();
+            // let obj2 = $('.div1').children().children() ;
+            // let obj3 = $('.div1').children().children().children() ;
+            // obj.css('color','blue');
+            // obj2.css('color','red');
+            // obj3.css('color','green');
+            // console.log('obj',obj);
+            // console.log('obj2',obj2);
+            // console.log('obj3',obj3);
+
+            // find
+            // let obj = $('.div1').find('.div2');
+            // let obj = $('.div1').find('li'); //全部li變色
+            // let obj = $('.div1').find('li').first(); //第一個
+            let obj = $('.div1').find('li').odd(); //基數 0 1 2 3 4
+            let obj2 = $('.div1').find('li').even(); //偶數 0 1 2 3 4 => 
+            let obj3 = $('.div1').find('li').first(); //偶數 0 1 2 3 4 => 
+            let obj4 = $('.div1').find('li').last(); //偶數 0 1 2 3 4 => 
+
+            obj.css('color', 'red');
+            obj2.css('color', 'blue');
+            obj3.css('color', 'skyblue');
+            obj4.css('color', 'pink');
+
+
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>
