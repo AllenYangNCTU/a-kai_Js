@@ -7,17 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div,ul,li{
+        div,
+        ul,
+        li {
             border: 1px black solid;
             width: 80%;
             padding: 10px;
             text-align: center;
             margin: 0 auto;
         }
-        li{
-            margin-top:10px;
+
+        li {
+            margin-top: 10px;
         }
-        div{
+
+        div {
             margin-top: 50px;
         }
     </style>
@@ -26,15 +30,19 @@
 
 <body>
     <!-- jQuery Traversing -->
-    
-    <div>
-        div
-        <ul>
-            ul
-            <li>hello li 111</li>
-            <li>hello li 222</li>
-        </ul>
+
+    <div class="div1">
+        div1
+        <div class="div2">
+            div2
+            <ul>
+                ul
+                <li>hello li 111</li>
+                <li>hello li 222</li>
+            </ul>
+        </div>
     </div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -56,11 +64,21 @@
             // console.log('myParentBYmyLi', myParentBYmyLi);
 
             //parents
-            $('li').css('color','red'); //我自己這層
-            $('li').parent().css('color','green'); //上一層
-            $('li').parent().parent().css('color','blue'); //上上一層
+            // $('li').css('color','red'); //我自己這層
+            // $('li').parent().css('color','green'); //上一層
+            // $('li').parent().parent().css('color','blue'); //上上一層
 
-            
+            //parents
+            // $('li').parents().css('color','brown'); //上面的每一層
+
+            //parentsUntil
+            // obj = $('li').parentsUntil('.div1');
+            obj = $('li').parentsUntil('.div2');
+            obj.css('color', 'skyblue'); //上面的每一層
+            console.log(obj);
+
+
+
 
         });
 
