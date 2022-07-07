@@ -24,13 +24,13 @@ body {
   .mg0 {
     width: 100px;
     height: 100px;
-    background: url('num.png');
+    background: url('./img/num.png');
   }
   
   .mgd {
     width: 50px;
     height: 100px;
-    background: url('num.png');
+    background: url('./img/num.png');
     background-position: right;
   }
   
