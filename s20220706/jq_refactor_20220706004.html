@@ -49,8 +49,8 @@
     <h1>投籃大賽</h1>
 
     <div>
-        <h3 id="title">分數</h3>
         <h2>歷史最高分數 <span>55688</span></h2>
+        <h3 id="title">分數</h3>
         <p id="myP">0</p>
         <hr>
         <p id="myTime">0</p>
@@ -90,14 +90,17 @@
             // 全部初始化 resetBtn 
             function backInit() {
                 clearInterval(timer); //timer 關掉
-
+                timer = null;
+                console.log('timer',timer);
                 score = 0;
                 isReset = false;
+                isStart = false;
                 myP.text(`${score}`);
-                mySpan.text('分數');
-                mySpan.css('color', 'black');
-                count = initTime;
-                myBtn.on("click", myBtnClickFun);
+                title.text('分數');
+                title.css('color', 'black');
+                mySpan.css('color','green')
+                count = initTime;                
+                myBtn.off('click').on("click", myBtnClickFun);
                 myP.text('0');
                 myTime.text(`${count}`);
                 myBtn.text('開始');
@@ -109,6 +112,8 @@
             // 1-2 得分 -> 得分路線
             function myBtnClickFun() {
                 // 1-1 條件開始 -> 動作得分
+                console.log('myBtnClick 444');
+                console.log('isStart',isStart);
                 if (isStart == false) {
                     myBtn.text('進球');
                     isStart = true;
@@ -120,6 +125,7 @@
                 // console.log('clickFun ok2');
                 // console.log('isStart', isStart);
                 // score = count;                
+                console.log(score);
                 if (count < point3Time) {
                     score += 3;
                 } else {
@@ -133,30 +139,32 @@
                 // console.log('click ok');
                 timer = setInterval(function () {
                     if (count <= point3Time) {
-                        mySpan.text('三分球時間');
-                        mySpan.css('color', 'green');
+                        title.text('三分球時間');
+                        title.css('color', 'green');
                     }
 
                     if (count > 0) {
                         count = count - 1;
                         myTime.text(`${count}`);
                     } else {
-                        mySpan.text('最終分數');
-                        mySpan.css('color', 'brown');
+                        title.text('最終分數');
+                        title.css('color', 'brown');
                         let nowScore = Number(myP.text());
 
                         if (nowScore > highScore) {
                             localStorage.setItem("highScore", nowScore);
-                            $('span').text(`${nowScore}`)
+                            mySpan.text(`${nowScore}`)
+                            mySpan.css('color',`red`)
                         }
-                        isReset = true;
+                        // localStorage.setItem("highScore", nowScore);
+                        // mySpan.text(`${nowScore}`)
 
-                        clearInterval(timer);
-                    }
-
-                    if (count <= 0) {
+                        isStart = false;
+                        console.log('isStart',isStart);
+                        console.log('time stop');
                         myBtn.text('時間到');
                         myBtn.off("click"); //不可以在投籃了                        
+                        clearInterval(timer);
                     }
                 }, 1000);
             }
@@ -165,6 +173,7 @@
             // 當超過100分 變三分球
 
             // 往上找 往外找 parent 往父層找
+            const title = $('#title');
             const mySpan = $('span');
             const myP = $('#myP');
             const myTime = $('#myTime');
@@ -185,10 +194,10 @@
             let score = 0;
 
             //初始秒數
-            let initTime = 60;
+            let initTime = 6;
 
             //三分球秒數
-            let point3Time = 55;
+            let point3Time = 3;
 
             //myBtn goBtn 初始狀態flag
             let isStart = false;
