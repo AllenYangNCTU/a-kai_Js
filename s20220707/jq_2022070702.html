@@ -45,10 +45,10 @@
                 ul
                 <li>hello li 111</li>
                 <li>hello li 222</li>
-                <li>hello li 333</li>
+                <li id="li333">hello li 333</li>
                 <li>hello li 444</li>
                 <li>hello li 555</li>
-                <li>hello li 666</li>
+                <li id="li666">hello li 666</li>
             </ul>
         </div>
     </div>
@@ -117,21 +117,29 @@
 
             // 往同一層找
             // next /prev / first  / index eq(0) 
-            const obj1 = $('li').first();
-            const obj2 = $('li').first().next();
-            const obj3 = $('li').first().next().next();
-            const obj4 = $('li').eq(3);
-            const obj5 = $('li').last().prev();
-            const obj6 = $('li').last();
+            // const obj1 = $('li').first();
+            // const obj2 = $('li').first().next();
+            // const obj3 = $('li').first().next().next();
+            // const obj4 = $('li').eq(3);
+            // const obj5 = $('li').last().prev();
+            // const obj6 = $('li').last();
 
-            obj1.css('color','blue');
-            obj2.css('color','red');
-            obj3.css('color','green');
-            obj4.css('color','brown');
-            obj5.css('color','skyblue');
-            obj6.css('color','pink');
+            // obj1.css('color','blue');
+            // obj2.css('color','red');
+            // obj3.css('color','green');
+            // obj4.css('color','brown');
+            // obj5.css('color','skyblue');
+            // obj6.css('color','pink');
 
+            // siblings
+            // const obj = $('#li333').siblings().css('color','pink');
 
+            // nextUntil
+            // between 該元件 與 找到元件之間
+            // const obj = $('#li333').nextUntil('#li666').css('color','pink');
+
+            // nextAll
+            const obj = $('#li333').nextAll().css('color','pink');
 
 
         });
