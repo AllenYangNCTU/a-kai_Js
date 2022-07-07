@@ -45,6 +45,9 @@
                 ul
                 <li>hello li 111</li>
                 <li>hello li 222</li>
+                <li>hello li 333</li>
+                <li>hello li 444</li>
+                <li>hello li 555</li>
             </ul>
         </div>
     </div>
@@ -86,15 +89,29 @@
             //往下找
             // children 往下一層
             // children 往下一層
-            let obj = $('.div1').children();
-            let obj2 = $('.div1').children().children() ;
-            let obj3 = $('.div1').children().children().children() ;
-            obj.css('color','blue');
-            obj2.css('color','red');
-            obj3.css('color','green');
-            console.log('obj',obj);
-            console.log('obj2',obj2);
-            console.log('obj3',obj3);
+            // let obj = $('.div1').children();
+            // let obj2 = $('.div1').children().children() ;
+            // let obj3 = $('.div1').children().children().children() ;
+            // obj.css('color','blue');
+            // obj2.css('color','red');
+            // obj3.css('color','green');
+            // console.log('obj',obj);
+            // console.log('obj2',obj2);
+            // console.log('obj3',obj3);
+
+            // find
+            // let obj = $('.div1').find('.div2');
+            // let obj = $('.div1').find('li'); //全部li變色
+            // let obj = $('.div1').find('li').first(); //第一個
+            let obj = $('.div1').find('li').odd(); //基數 0 1 2 3 4
+            let obj2 = $('.div1').find('li').even(); //偶數 0 1 2 3 4 => 
+            let obj3 = $('.div1').find('li').first(); //偶數 0 1 2 3 4 => 
+            let obj4 = $('.div1').find('li').last(); //偶數 0 1 2 3 4 => 
+        
+            obj.css('color','red');
+            obj2.css('color','blue');
+            obj3.css('color','skyblue');
+            obj4.css('color','pink');
 
 
 
