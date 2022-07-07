@@ -72,47 +72,47 @@
         </tr>
         <tr>
             <td>1</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td> <span class="myName">amy</span></td>
+            <td>0911-111-111</td>
         </tr>
         <tr>
             <td>2</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">bob</span></td>
+            <td>0922-222-222</td>
         </tr>
         <tr>
             <td>3</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">cat</span></td>
+            <td>0944-444-444</td>
         </tr>
         <tr>
             <td>4</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">dog</span></td>
+            <td>0955-555-555</td>
         </tr>
         <tr>
             <td>5</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">egg</span></td>
+            <td>0966-666-666</td>
         </tr>
         <tr>
             <td>6</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">fox</span></td>
+            <td>0977-777-777</td>
         </tr>
         <tr>
             <td>7</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">girl</span></td>
+            <td>0988-888-888</td>
         </tr>
         <tr>
             <td>8</td>
-            <td>amy</td>
-            <td>0911-111-222-333</td>
+            <td><span class="myName">hat</span></td>
+            <td>0999-999-999</td>
         </tr>
         <tr>
             <td>9</td>
-            <td>amy</td>
+            <td><span class="myName">ice</span></td>
             <td>0911-111-222-333</td>
         </tr>
     </table>
@@ -136,8 +136,15 @@
             // first => first red other 沒顏色
             // last => last red other 沒顏色
 
+            // 練習三
+            // 當我按學生姓名
+            // tr red
+            // next tr blue
+            // prev tr green
+
+
             function resetFun() {
-                myTable.find('tr').css('color','black');
+                myTable.find('tr').css('color', 'black');
             }
 
 
@@ -176,15 +183,39 @@
 
             firstBtn.click(function () {
                 resetFun();
-                myTable.find('td').parent().first().css('color','red');
+                myTable.find('td').parent().first().next().next().css('color', 'red');
             });
 
             lastBtn.click(function () {
                 resetFun();
-                myTable.find('tr').last().css('color','red');
+                myTable.find('tr').last().css('color', 'red');
             });
 
-            
+            // 方法一 class
+            $('.myName').each(function (index,element) {
+                $(this).click(function () {
+                    console.log(index);
+                    let getID = $(this).parent().prev().text();
+                    let getName = $(this).text();
+                    let getMobile = $(this).parent().next().text();
+
+                    resetFun();
+                    log($(this).parent().parent().prev());
+                    $(this).parent().parent().prev().css('color','green');
+                    $(this).parent().parent().css('color','red');
+                    $(this).parent().parent().next().css('color','blue');
+
+                    alert(`Hello ${getID} / ${getName} / ${getMobile} `);
+                });
+            });
+
+            // 方法二 綁定元件
+            // myTable.find('tr').each(function (index, element) {
+            //     $(this).click(function () {
+            //         console.log(index);
+            //     });
+            // });
+
         });
 
 
