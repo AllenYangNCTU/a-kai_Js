@@ -34,13 +34,16 @@
             margin-right: 50px;
             border-radius: 10px;
         }
-        .green{
+
+        .green {
             background-color: lightgreen;
         }
-        .reset{
+
+        .reset {
             background-color: skyblue;
         }
-        .red{
+
+        .red {
             background-color: pink;
         }
     </style>
@@ -53,9 +56,9 @@
     <h3>Traversing 紅綠燈</h3>
     <hr>
     <div>
-        <button class="green" type="green">綠燈</button>
-        <button class="reset" type="reset">重置</button>
-        <button class="red" type="red">紅燈</button>
+        <button class="green" type="button">綠燈</button>
+        <button class="reset" type="button">重置</button>
+        <button class="red" type="button">紅燈</button>
     </div>
     <hr>
 
@@ -114,68 +117,45 @@
 
 
 
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         $(document).ready(function () {
 
-            // 往上找 往外找 parent 往父層找
-            // const myUl = $('ul').first();
-            // const myLi = $('li').first();
+            // 練習一 紅綠燈
+            // green id 1 3 5 7 .... 
+            // red id 2 4 6 8 10 .... 
+            // reset all no color
 
-            // console.log('myUl', myUl);
-            // console.log('myLi', myLi);
-
-            // const myParentBYmyUl = myUl.parent();
-            // const myParentBYmyLi = myLi.parent();
-            // console.log('myParentBYmyUl', myParentBYmyUl);
-            // console.log('myParentBYmyLi', myParentBYmyLi);
-
-            //parents
-            // $('li').css('color','red'); //我自己這層
-            // $('li').parent().css('color','green'); //上一層
-            // $('li').parent().parent().css('color','blue'); //上上一層
-
-            //parents
-            // $('li').parents().css('color','brown'); //上面的每一層
-
-            //parentsUntil
-            // obj = $('li').parentsUntil('.div1');
-            // obj = $('li').parentsUntil('.div2');
-            // obj.css('color', 'skyblue'); //上面的每一層
-            // console.log(obj);
-
-            //往下找
-            // children 往下一層
-            // children 往下一層
-            // let obj = $('.div1').children();
-            // let obj2 = $('.div1').children().children() ;
-            // let obj3 = $('.div1').children().children().children() ;
-            // obj.css('color','blue');
-            // obj2.css('color','red');
-            // obj3.css('color','green');
-            // console.log('obj',obj);
-            // console.log('obj2',obj2);
-            // console.log('obj3',obj3);
-
-            // find
-            // let obj = $('.div1').find('.div2');
-            // let obj = $('.div1').find('li'); //全部li變色
-            // let obj = $('.div1').find('li').first(); //第一個
-            let obj = $('.div1').find('li').odd(); //基數 0 1 2 3 4
-            let obj2 = $('.div1').find('li').even(); //偶數 0 1 2 3 4 => 
-            let obj3 = $('.div1').find('li').first(); //偶數 0 1 2 3 4 => 
-            let obj4 = $('.div1').find('li').last(); //偶數 0 1 2 3 4 => 
-
-            obj.css('color', 'red');
-            obj2.css('color', 'blue');
-            obj3.css('color', 'skyblue');
-            obj4.css('color', 'pink');
+            // 練習二
+            // first => first red other 沒顏色
+            // last => last red other 沒顏色
 
 
+            //btn
+            const greenBtn = $('.green');
+            const redBtn = $('.red');
+            const resetBtn = $('.reset');
+            const table = $('table');
+            console.log('table',table);
 
+            // table.children().css('color','blue');
 
+            greenBtn.click(function () {
+                console.log('greenBtn ok');
+                console.log('children', table.children());
+                table.children().odd().css('color', 'green');
+            });
+            redBtn.click(function () {
+                console.log('redBtn ok');
+                table.children().even().css('color', 'red');
+            });
+            resetBtn.click(function () {
+                console.log('resetBtn ok');
+            });
         });
 
 
