@@ -56,13 +56,15 @@
     <h3>Traversing 紅綠燈</h3>
     <hr>
     <div>
+        <button class="firstBtn" type="button">第一組</button>
         <button class="green" type="button">綠燈</button>
         <button class="reset" type="button">重置</button>
         <button class="red" type="button">紅燈</button>
+        <button class="lastBtn" type="button">最後組</button>
     </div>
     <hr>
 
-    <table>
+    <table id="myTable">
         <tr>
             <th>id</th>
             <th>姓名</th>
@@ -135,34 +137,54 @@
             // last => last red other 沒顏色
 
             function resetFun() {
-                tr.css('color','black');
+                myTable.find('tr').css('color','black');
             }
 
 
             //btn
+            const firstBtn = $('.firstBtn');
+            const lastBtn = $('.lastBtn');
             const greenBtn = $('.green');
             const redBtn = $('.red');
             const resetBtn = $('.reset');
-            const tr = $('tr');
-            // console.log('table',table);
+            const myTable = $('#myTable');
+            // table childrend 非tr
+            // table find('tr')
+            const myTr = $('tr');
 
-            // table.children().css('color','blue');
+
+            console.log(myTable.find('tr'));
 
             greenBtn.click(function () {
                 resetFun();
                 console.log('greenBtn ok');
                 console.log('children', table.children());
-                tr.odd().css('color', 'green');
+                // myTr.odd().css('color', 'green');
+                myTable.find('tr').odd().css('color', 'green');
+
             });
             redBtn.click(function () {
                 resetFun();
                 console.log('redBtn ok');
-                tr.even().not('tr:first').css('color', 'red');
+                // myTr.evne().css('color', 'red');
+                myTable.find('tr').even().not('tr:first').css('color', 'red');
             });
             resetBtn.click(function () {
                 resetFun();
                 console.log('resetBtn ok');
             });
+
+            firstBtn.click(function () {
+                resetFun();
+                myTable.find('td').parent().first().css('color','red');
+            });
+
+            lastBtn.click(function () {
+                resetFun();
+                myTable.find('tr').last().css('color','red');
+            });
+
+            
         });
 
 
