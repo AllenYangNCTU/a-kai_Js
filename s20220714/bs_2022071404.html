@@ -20,6 +20,8 @@
         </div>
 
         <button type="button" class="btn btn-secondary mt-3" id="myBtn">Secondary</button>
+        <button type="button" class="btn btn-secondary mt-3" id="myBtn50" data-num="30">50%</button>
+        <button type="button" class="btn btn-secondary mt-3" id="myBtn100" data-num="100">100%</button>
     </div>
 
 
@@ -36,16 +38,51 @@
     <script>
         $(document).ready(function () {
             const myBtn = $('#myBtn');
+            const myBtn50 = $('#myBtn50');
+            const myBtn100 = $('#myBtn100');
             const myProgress = $('#myProgress');
+            let width = 0;
             // myProgress.css('width', `${20}%`);
             // myProgress.html(`${20}%`);
             // let i = 0;
             myBtn.click(function () {
                 let width = 0;
-                let timer = setInterval(frame, 100);
+                let timer = setInterval(frame, 20);
 
                 function frame() {
                     if (width >= 100) {
+                        clearInterval(timer);
+                    } else {
+                        width++;
+                        myProgress.css('width', `${width}%`);
+                        myProgress.html(`${width}%`);
+                    }
+                }
+            });
+
+            myBtn50.click(function () {
+                // let width = 0;
+                let endPoint = $(this).data("num");
+                let timer = setInterval(frame, 20);
+
+                function frame() {
+                    if (width >= endPoint) {
+                        clearInterval(timer);
+                    } else {
+                        width++;
+                        myProgress.css('width', `${width}%`);
+                        myProgress.html(`${width}%`);
+                    }
+                }
+            });
+
+            myBtn100.click(function () {
+                // let width = 0;
+                let endPoint = $(this).data("num");
+                let timer = setInterval(frame, 20);
+
+                function frame() {
+                    if (width >= endPoint) {
                         clearInterval(timer);
                     } else {
                         width++;
