@@ -13,6 +13,13 @@
 
 <body>
 
+    <!-- bs -->
+    <!-- 去官網 compents->各式各樣的元件 -->
+    <!-- 元件 小畫家 -->
+    <!-- 正方形 -->
+    <!-- 三角形 -->
+    <!-- 圓形 -->
+
     <div class="container-fluid">
         <p>
             <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
@@ -34,9 +41,83 @@
             </div>
             <div class="col">
                 <div class="collapse multi-collapse" id="multiCollapseExample2">
-                    <div class="card card-body">
+                    <div class="card card-body bg-dark text-white">
                         Some placeholder content for the second collapse component of this multi-collapse example. This
                         panel is hidden by default but revealed when the user activates the relevant trigger.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-outline-secondary btn-block text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                            aria-controls="collapseOne">
+                            日本北海道 7天6夜
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Some placeholder content for the first accordion panel. This panel is shown by default, thanks
+                        to the <code>.show</code> class.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-outline-secondary btn-block text-left collapsed" type="button"
+                            data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            韓國首爾 7天6夜
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <!-- <img src="https://picsum.photos/id/237/200/300" alt=""> -->
+                        <!-- row flexbox 藍色 -->
+                        <div class="row">
+                            <!-- col flexbox 灰色 -->
+                            <div class="col-4 w-100">
+                                <iframe  class="ml-5"
+                                src="https://www.youtube.com/embed/qOl6FLWszXw"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="col-md-4 offset-md-4">
+                                <p>北海道旅遊｜星野渡假村、水教堂、薰衣草六大體驗DIY、豊西牛螃蟹啤酒喝到飽在地美食五日
+                                    picsum</p>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <p>北海道旅遊｜星野渡假村、水教堂、薰衣草六大體驗DIY、豊西牛螃蟹啤酒喝到飽在地美食五日
+                                    picsum</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            花東之旅 7天6夜
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        And lastly, the placeholder content for the third and final accordion panel. This panel is
+                        hidden by default.
                     </div>
                 </div>
             </div>
