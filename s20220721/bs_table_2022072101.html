@@ -29,10 +29,11 @@
             <tbody>
                 <tr>
                     <td><input type="text" name="" id="" value="amy"></td>
-                    <td><input type="number" name="" id="" value="1"></td>
-                    <td><input type="number" name="" id="" value="2"></td>
-                    <td><input type="number" name="" id="" value="3"></td>
-                    <td><input type="number" name="" id="" value="3" readonly></td>
+                    <td><input type="number" name="" class="inputNum" id="" value="1"></td>
+                    <td><input type="number" name="" class="inputNum" id="" value="2"></td>
+                    <td><input type="number" name="" class="inputNum" id="" value="3"></td>
+                    <p class="sum"></p>
+                    <!-- <td><input type="number" name="" id="" value="3" readonly></td> -->
                 </tr>
                 <tr>
                     <td colspan="4">
@@ -57,6 +58,32 @@
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
 
+<script>
+    $(document).ready(function () {
+        $('.sum').text('55688');
+        $(".inputNum").blur(function () {
+            console.log($(this).val());
+            closestTr = $(this).closest('tr'); //回到上一層
+
+            console.log(closestTr);
+            // 抓這組tr下的東西
+            // 抓國文 英文 數學
+            let total = 0 ; //sum
+            $('.inputNum',closestTr).each(function(){
+                total += Number($(this).val()) || 0;//轉換時如果沒有值0
+                console.log('total',total);
+            });
+            
+            closestTr.find('.sum').text(total);
+            console.log(total);
+
+
+        });
+        // $("#btn2").click(function () {
+        //     alert($("div").data("greeting"));
+        // });
+    });
+</script>
 
 </body>
 
