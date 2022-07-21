@@ -162,7 +162,7 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title"> 單筆修改</h4>
+                    <h4 class="modal-title"> 單筆修改</h4> <span id="mySpan"></span>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -241,9 +241,13 @@
 
     <script>
         $(document).ready(function () {
+            const mySpan = $('#mySpan');
             $(".editBtn").click(function () {
-                console.log($(this).data('id'));
-                alert($(this).data("id"));
+                // console.log($(this).data('id'));
+                mySpan.text($(this).data('id'));
+                // alert($(this).data("id"));
+                // 進入Modal 
+                // 抓modal ajax
             });
             // $("#btn2").click(function () {
             //     alert($("div").data("greeting"));
