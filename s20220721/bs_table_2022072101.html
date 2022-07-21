@@ -108,7 +108,16 @@
             });
             $("#removeBtn").click(function () {
                 let closestTr = $(this).closest('tr'); //回到上一層
-                closestTr.remove();
+                let myIndex = $(this).closest('tr').index(); //回到上一層
+                let myLength = $(this).closest('tbody').find('tr').length; //回到上一層
+                console.log('myIndex',myIndex);
+                console.log('myLength',myLength);
+                // if(myIndex > 0){
+                //     closestTr.remove();
+                // }
+                if(myLength > 2){
+                    closestTr.remove();
+                }
             });
         });
     </script>
