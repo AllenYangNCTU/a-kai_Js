@@ -37,7 +37,7 @@
                         <p class="sum"></p>
                     </td>
                     <td>
-                        <button id="removeBtn" type="button" class="btn btn-danger">del</button>
+                        <button type="button" class="btn btn-danger removeBtn">del</button>
                     </td>
                     <!-- <td><input type="number" name="" id="" value="3" readonly></td> -->
                 </tr>
@@ -106,7 +106,7 @@
                 trLastNew.find('.sum').text('');
 
             });
-            $("#removeBtn").click(function () {
+            $(".removeBtn").click(function () {
                 let closestTr = $(this).closest('tr'); //回到上一層
                 let myIndex = $(this).closest('tr').index(); //回到上一層
                 let myLength = $(this).closest('tbody').find('tr').length; //回到上一層
