@@ -27,11 +27,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="myTr">
                     <td><input type="text" name="" id="" value="amy"></td>
-                    <td><input type="number" name="" class="inputNum" id="" value="1"></td>
-                    <td><input type="number" name="" class="inputNum" id="" value="2"></td>
-                    <td><input type="number" name="" class="inputNum" id="" value="3"></td>
+                    <td><input type="number" name="" class="inputNum" id="" value=""></td>
+                    <td><input type="number" name="" class="inputNum" id="" value=""></td>
+                    <td><input type="number" name="" class="inputNum" id="" value=""></td>
                     <td>
                         <p class="sum"></p>
                     </td>
@@ -60,36 +60,50 @@
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
 
-<script>
-    $(document).ready(function () {
-        // $('.sum').text('55688');
-        // blur event 當我focus移開
-        $(".inputNum").blur(function () {
-            console.log($(this).val());
-            closestTr = $(this).closest('tr'); //回到上一層
+    <script>
+        $(document).ready(function () {
+            // $('.sum').text('55688');
+            // blur event 當我focus移開
+            $(".inputNum").blur(function () {
+                console.log($(this).val());
+                closestTr = $(this).closest('tr'); //回到上一層
 
-            console.log(closestTr);
-            // 抓這組tr下的東西
-            // 抓國文 英文 數學
-            let total = 0 ; //sum
-            // let trAllinputNum = closestTr.find('.inputNum');
-            // trAllinputNum.each(....)
-            $('.inputNum',closestTr).each(function(){
-                total += Number($(this).val()) || 0;//轉換時如果沒有值0
-                console.log('total',total);
+                console.log(closestTr);
+                // 抓這組tr下的東西
+                // 抓國文 英文 數學
+                let total = 0; //sum
+                // let trAllinputNum = closestTr.find('.inputNum');
+                // trAllinputNum.each(....)
+                $('.inputNum', closestTr).each(function () {
+                    total += Number($(this).val()) || 0; //轉換時如果沒有值0
+                    console.log('total', total);
+                });
+
+                closestTr.find('.sum').text(total);
+                // let nowData = closestTr.find('.sum');
+                // console.log(nowData);
+                console.log('sumTotal', total);
+
             });
-            
-            closestTr.find('.sum').text(total);
-            // let nowData = closestTr.find('.sum');
-            // console.log(nowData);
-            console.log('sumTotal',total);
+            $("#cloneBtn").click(function () {                
+                console.log('cloneBtn ok');
+                // 抓最後一個tr
+                let trLast = $('.myTr').last(); //myTr 最後一個tr copy
+                console.log(trLast);
 
+                // clone
+                let cloneData = trLast.clone(true);
+                trLast.after(cloneData);
+
+                // clear data
+                // 重新抓我更新過的myTr.last()
+                let trLastNew = $('.myTr').last();
+                trLastNew.find('input').val('');
+                trLastNew.find('.sum').text('');
+
+            });
         });
-        // $("#btn2").click(function () {
-        //     alert($("div").data("greeting"));
-        // });
-    });
-</script>
+    </script>
 
 </body>
 
