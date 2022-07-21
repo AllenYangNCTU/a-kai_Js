@@ -32,7 +32,9 @@
                     <td><input type="number" name="" class="inputNum" id="" value="1"></td>
                     <td><input type="number" name="" class="inputNum" id="" value="2"></td>
                     <td><input type="number" name="" class="inputNum" id="" value="3"></td>
-                    <p class="sum"></p>
+                    <td>
+                        <p class="sum"></p>
+                    </td>
                     <!-- <td><input type="number" name="" id="" value="3" readonly></td> -->
                 </tr>
                 <tr>
@@ -60,7 +62,8 @@
 
 <script>
     $(document).ready(function () {
-        $('.sum').text('55688');
+        // $('.sum').text('55688');
+        // blur event 當我focus移開
         $(".inputNum").blur(function () {
             console.log($(this).val());
             closestTr = $(this).closest('tr'); //回到上一層
@@ -69,14 +72,17 @@
             // 抓這組tr下的東西
             // 抓國文 英文 數學
             let total = 0 ; //sum
+            // let trAllinputNum = closestTr.find('.inputNum');
+            // trAllinputNum.each(....)
             $('.inputNum',closestTr).each(function(){
                 total += Number($(this).val()) || 0;//轉換時如果沒有值0
                 console.log('total',total);
             });
             
             closestTr.find('.sum').text(total);
-            console.log(total);
-
+            // let nowData = closestTr.find('.sum');
+            // console.log(nowData);
+            console.log('sumTotal',total);
 
         });
         // $("#btn2").click(function () {
